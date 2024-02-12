@@ -1,0 +1,510 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Freight Big Pro";
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+#main {
+  background-color: #000000;
+}
+.loader {
+  height: 100vh;
+  width: 100%;
+  color: #fff;
+  background-color: #000000;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 99;
+  /* display: none; */
+}
+.loader h1 {
+  font-size: 6.8vw;
+  line-height: 5.5vw;
+  font-weight: lighter;
+  letter-spacing: -3px;
+  position: relative;
+  z-index: 9;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.loader video {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  object-fit: cover;
+  z-index: 6;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.yellow1 {
+  height: 100%;
+  width: 100%;
+  background-color: #f5e41b;
+  position: absolute;
+  z-index: 7;
+}
+.yellow2 {
+  height: 100%;
+  width: 100%;
+  background-color: #f5e41b;
+  position: absolute;
+  z-index: 7;
+}
+
+.nav {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  padding: 30px 50px;
+}
+.nav-contain {
+  display: flex;
+}
+.nav-item ul {
+  display: flex;
+  position: relative;
+  left: 44vw;
+  align-items: center;
+}
+.nav-item ul li {
+  display: flex;
+  list-style: none;
+  margin-left: 50px;
+}
+.nav-item ul li a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 1.2vw;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-family: "Neue Haas Grotesk Display Pro";
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+.nav-item ul li a::before,
+.nav-item ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #000000;
+  transition: width 0.3s ease;
+}
+
+.nav-item ul li a::before {
+  bottom: 0; /* Change 'top' to 'bottom' */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-item ul li a::after {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-item ul li a:hover::before,
+.nav-item ul li a:hover::after {
+  width: 100%;
+}
+
+.nav-item ul i {
+  cursor: pointer;
+  margin-left: 50px;
+  font-size: 3vw;
+  /* font-weight: 100; */
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.page1 {
+  height: 100vh;
+  width: 100%;
+  background-color: #f5e41b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.page1 h1 {
+  font-size: 6.8vw;
+  line-height: 5.5vw;
+  font-weight: lighter;
+  letter-spacing: -3px;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.down {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  bottom: 2%;
+  padding: 0 50px 15px 50px;
+}
+.down a {
+  color: #000000;
+  font-size: 1.2vw;
+  font-weight: 500;
+  user-select: none;
+  text-decoration: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  font-family: "Neue Haas Grotesk Display Pro";
+}
+
+.down a::before,
+.down a::after {
+  width: 0;
+  content: "";
+  height: 2px;
+  position: absolute;
+  background-color: #000000;
+  transition: width 0.3s ease;
+}
+
+.down a::before {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.down a::after {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.down a:hover::before,
+.down a:hover::after {
+  width: 100%;
+}
+
+.down i {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.page2 {
+  height: 100vh;
+  width: 100%;
+  background-color: #000000;
+  background-position: center;
+  background-size: cover;
+  transition: white ease 0.6;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.elem {
+  position: relative;
+  /* background-color: red; */
+  width: 100%;
+  cursor: pointer;
+}
+.elem .blur {
+  position: absolute;
+  width: 30%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to right, #f5e31bf5, #f5e41b, #f5e31bf5);
+  box-shadow: 10px 0 20px 20px #f5e41b, -10px 0 20px 100px #f5e41b;
+  z-index: 8;
+  height: 100%;
+}
+.elem h2 {
+  font-size: 6.8vw;
+  text-transform: uppercase;
+  font-weight: 100;
+  position: relative;
+  z-index: 9;
+  line-height: 5vw;
+}
+.elem .moving {
+  background-color: #f5e41b;
+  width: 100%;
+  white-space: nowrap;
+  padding: 8px 0;
+  position: absolute;
+  top: 50%;
+  overflow: hidden;
+  transform: translate(0, -45%) scaleY(0);
+  transition: all ease 0.3s;
+  /* opacity: 0; */
+}
+.elem .moving .moving-in {
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: moving;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.elem .moving .moving-in h5 {
+  color: #000000;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 500;
+  transition: all ease 0.3s;
+  transition-delay: 0.2s;
+  opacity: 0;
+  font-family: grilroy;
+  text-transform: uppercase;
+  margin-right: 35px;
+}
+@keyframes moving {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.elem:hover .moving {
+  transform: translate(0, -45%) scaleY(1);
+}
+.elem:hover .moving h5 {
+  opacity: 1;
+}
+.elem:hover h2 {
+  font-style: italic;
+}
+.page2 i {
+  position: absolute;
+  bottom: 1.5%;
+  cursor: pointer;
+}
+
+.page3 {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #fff;
+}
+.image-container {
+  padding: 30px;
+  display: flex;
+  /* align-items: flex-start; */
+  flex-wrap: wrap;
+}
+.image-div {
+  /* height: 40vw; */
+  width: 29.8vw;
+  /* background-color: red; */
+  position: relative;
+  overflow: hidden;
+  margin: 40px 14px;
+}
+.image-div img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all ease 0.5s;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #00000017;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transition: all ease 0.5s;
+  /* transition-delay: 0.2s; */
+  cursor: pointer;
+  z-index: 9;
+}
+.overlay p {
+  font-size: 3.5vw;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+  line-height: 2.5vw;
+  transition: all ease 0.5s;
+  opacity: 0;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.image-div:hover .overlay {
+  background-color: #000000;
+}
+.image-div:hover .overlay p {
+  opacity: 1;
+}
+.image-div:hover img {
+  scale: 1.1;
+}
+
+#footer {
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.icon i {
+  cursor: pointer;
+  font-size: 3vw;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#footer h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  cursor: pointer;
+  font-family: "Neue Haas Grotesk Display Pro";
+  font-weight: 300;
+}
+
+#footer .foot {
+  width: 100%;
+  height: 10vw;
+  background-color: #000000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+#footer .foot a {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: "Neue Haas Grotesk Display Pro";
+  position: relative; /* Added position:relative to the anchor tags */
+}
+
+.foot2 a {
+  margin-right: 30px;
+}
+
+#footer .foot a::before,
+#footer .foot a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#footer .foot a::before {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#footer .foot a::after {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#footer .foot a:hover::before,
+#footer .foot a:hover::after {
+  width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .nav-item ul {
+    left: 0;
+  }
+  .nav-item ul i {
+    font-size: 6vw;
+    display: flex;
+    align-items: center;
+  }
+  .nav-item ul li a {
+    display: none;
+  }
+  .page1 h1 {
+    font-size: 9.8vw;
+    line-height: 10.5vw;
+    letter-spacing: -4px;
+}
+.loader h1{
+  font-size: 9.8vw;
+    line-height: 10.5vw;
+    letter-spacing: -4px;
+}
+.down a {
+  font-size: 4.5vw;
+}
+.image-div {
+  width: 90.8vw;
+  margin: 40px 14px;
+}
+.image-container {
+  padding: 6px;
+  flex-wrap: wrap;
+}
+.page2 i {
+  top: 190%;
+}
+.elem h2 {
+  font-size: 12.8vw;
+  line-height: 15vw;
+}
+
+
+.elem .moving {
+  padding: 0px 0;
+}
+.elem:hover .moving {
+  transform: translate(0, -45%) scaleY(1);
+}
+.icon i {
+  font-size: 13vw;
+
+}
+#footer .foot {
+  height: 20vh;
+  flex-wrap: wrap;
+}
+}
